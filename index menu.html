@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CAFA iGEM Menu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* 页面背景噪点动画开始 */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(circle, rgba(0,170,255,0.1) 0%, rgba(244,168,204,0.1) 100%);
+      background-size: 400% 400%;
+      animation: noiseDiffuse 20s infinite alternate;
+      pointer-events: none;
+      z-index: -1;
+    }
+    @keyframes noiseDiffuse {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    /* 页面背景噪点动画结束 */
+
+    /* 🌟 浮动粒子动画背景开始 */
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: -1;
+      background-image: radial-gradient(rgba(255,255,255,0.3) 2px, transparent 3px);
+      background-size: 50px 50px;
+      animation: particleFloat 60s linear infinite;
+    }
+
+    @keyframes particleFloat {
+      from { background-position: 0 0; }
+      to { background-position: 1000px 1000px; }
+    }
+    /* 🌟 浮动粒子动画背景结束 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Microsoft YaHei', 'Heiti SC', sans-serif;
+      background: #f8f8f8;
+      color: #1a1a1a;
+    }
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+    .logo span {
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .menu-item {
+      position: relative;
+    }
+    .menu > .menu-item > a {
+      margin: 0 10px;
+      padding: 12px 16px;
+      color: #333;
+      text-decoration: none;
+      font-size: 1em;
+      display: inline-block;
+      transition: all 0.3s;
+    }
+    .menu > .menu-item > a:hover {
+      background: #eee;
+      color: #000;
+    }
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #f9f9f9;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 999;
+    }
+    .submenu a {
+      display: block;
+      padding: 10px 16px;
+      color: #333;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .submenu a:hover {
+      background: #eee;
+      color: #000;
+    }
+    .menu-item:hover .submenu {
+      display: block;
+    }
+    .page {
+      display: none;
+      padding: 40px;
+    }
+    .page.active {
+      display: block;
+    }
+    /* 返回顶部按钮样式 */
+  #backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+    transition: all 0.3s;
+  }
+  #backToTop:hover {
+    background: #555;
+  }
+</style> <!-- ↑ 样式代码添加结束 -->
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">
+      <img src="image/CAFA IGEM .png" alt="CAFA Logo">
+      <span>CAFA iGEM</span>
+    </div>
+    <div class="menu">
+      <div class="menu-item">
+        <a href="#" onclick="showPage('home')">Home</a>
+        <div class="submenu">
+          <a href="#" onclick="showPage('home', 'home-interaction1')">Interaction 1</a>
+          <a href="#" onclick="showPage('home', 'home-interaction2')">Interaction 2</a>
+          <a href="#" onclick="showPage('home', 'home-interaction3')">Interaction 3</a>
+        </div>
+      </div>
+      <div class="menu-item">
+        <a href="#" onclick="showPage('team')">Team</a>
+        <div class="submenu">
+          <a href="#" onclick="showPage('team', 'team-members')">Members</a>
+          <a href="#" onclick="showPage('team', 'team-roles')">Roles</a>
+        </div>
+      </div>
+      <div class="menu-item">
+        <a href="#" onclick="showPage('project')">Project</a>
+        <div class="submenu">
+          <a href="#" onclick="showPage('project', 'project-design')">Design</a>
+          <a href="#" onclick="showPage('project', 'project-goals')">Goals</a>
+        </div>
+      </div>
+      <div class="menu-item">
+        <a href="#" onclick="showPage('wetlab')">Wet Lab</a>
+        <div class="submenu">
+          <a href="#" onclick="showPage('wetlab', 'wetlab-protocols')">Protocols</a>
+          <a href="#" onclick="showPage('wetlab', 'wetlab-experiments')">Experiments</a>
+        </div>
+      </div>
+      <div class="menu-item">
+        <a href="#" onclick="showPage('human')">Human Practices</a>
+        <div class="submenu">
+          <a href="#" onclick="showPage('human', 'human-education')">Education</a>
+          <a href="#" onclick="showPage('human', 'human-ethics')">Ethics</a>
+        </div>
+      </div>
+      <div class="menu-item">
+        <a href="#" onclick="showPage('hardware')">Hardware</a>
+        <div class="submenu">
+          <a href="#" onclick="showPage('hardware', 'hardware-devices')">Devices</a>
+          <a href="#" onclick="showPage('hardware', 'hardware-assembly')">Assembly</a>
+        </div>
+      </div>
+      <div class="menu-item">
+        <a href="#" onclick="showPage('model')">Model</a>
+        <div class="submenu">
+          <a href="#" onclick="showPage('model', 'model-simulations')">Simulations</a>
+          <a href="#" onclick="showPage('model', 'model-parameters')">Parameters</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="home" class="page active">
+  <!-- 动画主视觉占位区 -->
+<div style="height: 100vh; background: radial-gradient(ellipse at center, rgba(240,250,255,1) 0%, rgba(180,210,255,0.2) 60%, rgba(244,168,204,0) 100%); mask-image: radial-gradient(circle at center, black 30%, transparent 100%); display: flex; justify-content: center; align-items: center;"> <!-- 主视觉动画区域背景模糊调整为中心清晰，边缘完全透明 --> <!-- 主视觉动画区域背景模糊处理 -->
+  <svg width="300" height="500" viewBox="0 -40 100 340" xmlns="http://www.w3.org/2000/svg" style="filter: drop-shadow(0 0 10px rgba(100,150,255,0.4)); transform: rotate(-45deg) scale(1.5);">
+    <defs>
+      <linearGradient id="dnaGradient1" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#00aaff"/>
+        <stop offset="100%" stop-color="#f4a8cc"/>
+      </linearGradient>
+      <linearGradient id="dnaGradient2" x1="1" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#f4a8cc"/>
+        <stop offset="100%" stop-color="#00aaff"/>
+      </linearGradient>
+      <path id="dnaPath1" d="
+        M40,300
+        C30,280 70,280 60,260
+        C50,240 50,240 40,220
+        C30,200 70,200 60,180
+        C50,160 50,160 40,140
+        C30,120 70,120 60,100
+        C50,80 50,80 40,60
+        C30,40 70,40 60,20
+        C50,0 50,0 40,-20" />
+      <path id="dnaPath2" d="
+        M60,300
+        C70,280 30,280 40,260
+        C50,240 50,240 60,220
+        C70,200 30,200 40,180
+        C50,160 50,160 60,140
+        C70,120 30,120 40,100
+        C50,80 50,80 60,60
+        C70,40 30,40 40,20
+        C50,0 50,0 60,-20" />
+    </defs>
+
+    <use href="#dnaPath1" stroke="url(#dnaGradient1)" stroke-width="4" fill="none">
+      <animate attributeName="stroke-dasharray" from="0,1000" to="400,0" dur="4s" fill="freeze" repeatCount="indefinite" />
+    </use>
+
+    <use href="#dnaPath2" stroke="url(#dnaGradient2)" stroke-width="4" fill="none">
+      <animate attributeName="stroke-dasharray" from="0,1000" to="400,0" dur="4s" fill="freeze" repeatCount="indefinite" />
+    </use>
+  </svg>
+</div>
+<script>
+  const path = document.getElementById('dnaPath');
+  const steps = 200;
+  const centerX = 250;
+  const centerY = 250;
+  const radiusX = 40;
+  const radiusY = 120;
+  const height = 300;
+
+  let d = '';
+  for (let i = 0; i <= steps; i++) {
+    const t = i / steps * 2 * Math.PI * 3;
+    const x = centerX + Math.sin(t) * radiusX;
+    const y = centerY + (i / steps - 0.5) * height + Math.cos(t) * 10;
+    d += (i === 0 ? 'M' : 'L') + x + ' ' + y + ' ';
+  }
+  path.setAttribute('d', d);
+
+  // Animate draw
+  path.style.strokeDasharray = path.getTotalLength();
+  path.style.strokeDashoffset = path.getTotalLength();
+  path.style.transition = 'stroke-dashoffset 4s ease-out';
+  setTimeout(() => {
+    path.style.strokeDashoffset = '0';
+  }, 300);
+</script>
+  <div id="home-interaction1" style="margin-bottom: 80px;">
+    <h3>Interaction 1</h3>
+    <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; align-items: center; text-align: center;">
+      <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 100%; max-width: 1000px; height: 500px;">Intro A</div>
+      <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 100%; max-width: 1000px; height: 500px;">Intro B</div>
+    </div>
+  </div>
+  <div id="home-interaction2" style="margin-bottom: 80px;">
+    <h3>Interaction 2</h3>
+    <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; align-items: center; text-align: center;">
+      <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 100%; max-width: 1000px; height: 500px;">Info A</div>
+    </div>
+  </div>
+  <div id="home-interaction3">
+    <h3>Interaction 3</h3>
+    <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; align-items: center; text-align: center;">
+      <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 100%; max-width: 1000px; height: 500px;">Highlight</div>
+    </div>
+  </div>
+</div>
+  
+<div id="team" class="page">
+  <div id="team-members" style="margin-bottom: 80px;">
+    <h3>Members</h3>
+    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+      <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 200px;">Member 1</div>
+      <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 200px;">Member 2</div>
+    </div>
+  </div>
+  <div id="team-roles">
+    <h3>Roles</h3>
+    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+      <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 200px;">Role A</div>
+      <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 200px;">Role B</div>
+    </div>
+  </div><h2>Team Page</h2></div>
+  <div id="project" class="page">
+  <div id="project-design" style="margin-bottom: 80px;">
+    <h3>Design</h3>
+    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+      <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 200px;">Concept</div>
+      <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 200px;">Sketch</div>
+    </div>
+  </div>
+  <div id="project-goals">
+    <h3>Goals</h3>
+    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+      <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 200px;">Goal A</div>
+    </div>
+  </div>
+</div>
+  <div id="wetlab" class="page">
+  <div id="wetlab-protocols" style="margin-bottom: 80px;">
+    <h3>Protocols</h3>
+    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+      <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 200px;">Step 1</div>
+      <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 200px;">Step 2</div>
+    </div>
+  </div>
+  <div id="wetlab-experiments">
+    <h3>Experiments</h3>
+    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+      <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 200px;">Result A</div>
+    </div>
+  </div>
+</div>
+  <div id="human" class="page">
+  <div id="human-education" style="margin-bottom: 80px;">
+    <h3>Education</h3>
+    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+      <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 200px;">
+        <img src="https://via.placeholder.com/200x120" alt="Education Icon" style="width:100%; border-radius: 6px; margin-bottom: 10px;">
+        Workshop A
+      </div>
+    </div>
+  </div>
+  <div id="human-ethics">
+    <h3>Ethics</h3>
+    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+      <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 200px;">
+        <img src="https://via.placeholder.com/200x120" alt="Ethics Icon" style="width:100%; border-radius: 6px; margin-bottom: 10px;">
+        Discussion B
+      </div>
+    </div>
+  </div>
+</div>
+  <div id="hardware" class="page">
+  <div id="hardware-devices" style="margin-bottom: 80px;">
+    <h3>Devices</h3>
+    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+      <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 200px;">Device 1</div>
+    </div>
+  </div>
+  <div id="hardware-assembly">
+    <h3>Assembly</h3>
+    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+      <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 200px;">Assembly Step A</div>
+    </div>
+  </div>
+</div>
+  <div id="model" class="page">
+  <div id="model-simulations" style="margin-bottom: 80px;">
+    <h3>Simulations</h3>
+    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+      <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 200px;">
+        <img src="https://via.placeholder.com/200x120" alt="Simulation Icon" style="width:100%; border-radius: 6px; margin-bottom: 10px;">
+        Model X
+      </div>
+    </div>
+  </div>
+  <div id="model-parameters">
+    <h3>Parameters</h3>
+    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+      <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 200px;">
+        <img src="https://via.placeholder.com/200x120" alt="Parameter Icon" style="width:100%; border-radius: 6px; margin-bottom: 10px;">
+        Set A
+      </div>
+    </div>
+  </div>
+</div>
+  <script>
+  function showPage(pageId, sectionId = null) {
+    // 清除所有页面显示状态
+    document.querySelectorAll('.page').forEach(page => {
+      page.classList.remove('active');
+    });
+
+    // 激活目标页面
+    const targetPage = document.getElementById(pageId);
+    if (targetPage) {
+      targetPage.classList.add('active');
+
+      // 在下一帧后执行滚动逻辑，确保 DOM 已渲染
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          if (sectionId) {
+            const scrollTarget = document.getElementById(sectionId);
+            if (scrollTarget) {
+              const offsetTop = scrollTarget.getBoundingClientRect().top + window.scrollY - 80; // 避开导航栏
+              window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+            }
+          } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        }, 100);
+      });
+    }
+  }
+</script>
+  <!-- 返回顶部按钮代码开始 -->
+  <button id="backToTop" onclick="scrollToTop()">↑</button>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      const btn = document.getElementById('backToTop');
+      if (window.scrollY > 300) {
+        btn.style.display = 'block';
+      } else {
+        btn.style.display = 'none';
+      }
+    });
+
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  </script>
+  <!-- 返回顶部按钮代码结束 -->
+<footer style="background:#222;color:#fff;padding:40px 20px;text-align:center;margin-top:60px">
+  <div style="max-width:1000px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:center;gap:40px;">
+    <div><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/IGEM_official_logo.svg/200px-IGEM_official_logo.svg.png" alt="igem logo" style="height:40px;"><p>iGEM Official</p></div>
+    <div><p><strong>Explore</strong></p><p>About | Teams | Tracks | Safety</p></div>
+    <div><p><strong>Contact</strong></p><p>igem@igem.org</p></div>
+  </div>
+</footer>
+
+</body>
+</html>
