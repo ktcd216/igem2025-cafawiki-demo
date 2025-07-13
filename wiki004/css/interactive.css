@@ -1,0 +1,141 @@
+/*
+ * CAFA-AFAC TimeEraser iGEM Wiki - Interactive Styles
+ * Styles specific to 3D space, character slider, etc.
+ */
+
+/* --- Homepage 3D Space --- */
+#threejs-container {
+    position: relative;
+    width: 100%;
+    height: 700px; /* Adjust height for the immersive effect */
+    background-color: var(--color-black); /* Dark background for the 3D scene */
+    overflow: hidden;
+    z-index: 1;
+    cursor: grab; /* Indicate interactivity */
+}
+
+#threejs-container:active {
+    cursor: grabbing;
+}
+
+#threejs-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.threejs-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none; /* Allows mouse events to pass through to canvas */
+    opacity: 0.7;
+    transition: opacity 0.5s ease;
+    z-index: 2; /* Above canvas, below any UI elements */
+}
+
+.threejs-overlay p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.2em;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* --- Horizontal Character Slider --- */
+.character-slider-section {
+    background-color: var(--color-gray-light);
+    padding: 80px 0; /* Padding top/bottom, 0 for horizontal overflow */
+    border-top: 1px solid var(--color-gray-medium);
+    text-align: center;
+}
+
+.character-slider-section h2 {
+    margin-bottom: 50px;
+}
+
+.character-slider-wrapper {
+    overflow-x: auto; /* Enable horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    padding-bottom: 20px; /* Space for scrollbar (if visible) or shadow */
+    margin-top: 20px;
+    position: relative; /* For scroll indicators */
+}
+
+.character-slider {
+    display: flex;
+    gap: 40px; /* Spacing between cards */
+    padding: 0 5%; /* Padding left/right for the cards themselves */
+    scroll-snap-type: x mandatory; /* Snap to cards */
+    align-items: flex-start; /* Align cards to top */
+}
+
+/* Hide scrollbar, but still allow scrolling */
+.character-slider-wrapper::-webkit-scrollbar {
+    display: none;
+}
+.character-slider-wrapper {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.character-card {
+    flex: 0 0 280px; /* Fixed width for each card */
+    scroll-snap-align: start; /* Snap to start of card */
+    background-color: var(--color-white);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.character-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.character-card img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid var(--color-yellow); /* Yellow border accent */
+    box-shadow: 0 0 0 6px rgba(253, 216, 53, 0.2); /* Outer glow */
+}
+
+.character-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 8px;
+    color: var(--color-black);
+}
+
+.character-card p {
+    font-size: 0.9em;
+    color: var(--color-text-dark);
+}
+
+/* Scroll indicators (optional, can be implemented with JS for dynamic visibility) */
+/*
+.scroll-indicator {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: none; // Hide by default, show with JS
+}
+.scroll-indicator.left { left: 1%; }
+.scroll-indicator.right { right: 1%; }
+*/

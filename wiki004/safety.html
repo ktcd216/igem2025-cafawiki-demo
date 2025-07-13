@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAFA-AFAC iGEM | Safety Protocols</title>
+    <meta name="description" content="Comprehensive safety protocols and risk assessments for CAFA-AFAC iGEM TimeEraser project, ensuring responsible synthetic biology.">
+    <meta name="keywords" content="iGEM safety, lab safety, GMO protocols, biosafety, risk assessment, synthetic biology safety">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/interactive.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <a href="../index.html" aria-label="CAFA-AFAC iGEM TimeEraser Home">
+                <img src="../assets/img/logo.svg" alt="CAFA-AFAC TimeEraser iGEM Logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html" class="nav-item">Home</a></li>
+                <li class="has-submenu">
+                    <a href="../project.html" class="nav-item">Project <i class="fas fa-chevron-down submenu-arrow"></i></a>
+                    <ul class="submenu">
+                        <li><a href="../project/design.html">Design</a></li>
+                        <li><a href="../project/results.html">Results</a></li>
+                        <li><a href="../project/implementation.html">Implementation</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="../lab.html" class="nav-item">Lab <i class="fas fa-chevron-down submenu-arrow"></i></a>
+                    <ul class="submenu">
+                        <li><a href="../lab/experiments.html">Experiments</a></li>
+                        <li><a href="../lab/protocols.html">Protocols</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="../model.html" class="nav-item">Model <i class="fas fa-chevron-down submenu-arrow"></i></a>
+                    <ul class="submenu">
+                        <li><a href="../model/simulation.html">Simulation</a></li>
+                        <li><a href="../model/data-analysis.html">Data Analysis</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="../hp.html" class="nav-item">Human Practices <i class="fas fa-chevron-down submenu-arrow"></i></a>
+                    <ul class="submenu">
+                        <li><a href="../hp/engagement.html">Engagement</a></li>
+                        <li><a href="../hp/education.html">Education</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="../team.html" class="nav-item">Team <i class="fas fa-chevron-down submenu-arrow"></i></a>
+                    <ul class="submenu">
+                        <li><a href="../team/members.html">Members</a></li>
+                        <li><a href="../team/attributions.html">Attributions</a></li>
+                    </ul>
+                </li>
+                <li><a href="../safety.html" class="nav-item active">Safety</a></li> <li><a href="../attributions.html" class="nav-item">Attributions</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <h1>Our Commitment to Safety</h1>
+                <p>At CAFA-AFAC iGEM, safety is paramount. We adhere to the highest standards to ensure responsible and ethical synthetic biology practices in our TimeEraser project.</p>
+                <a href="#risk-assessment" class="btn">View Risk Assessment</a>
+            </div>
+        </section>
+
+        <section id="general-safety" class="section-padding">
+            <div class="container">
+                <h2>General Lab Safety</h2>
+                <p>Our team operates in a Biosafety Level 1 (BSL-1) laboratory, compliant with all institutional and national regulations. All team members have undergone comprehensive safety training and are proficient in sterile techniques and waste disposal.</p>
+                <div class="content-block text-image-layout">
+                    <div class="text-content">
+                        <h3>Our BSL-1 Environment</h3>
+                        <p>The BSL-1 laboratory is designed for work with well-characterized agents not known to consistently cause disease in healthy adult humans, and of minimal potential hazard to laboratory personnel and the environment. This includes standard microbiological practices.</p>
+                        <ul>
+                            <li>No open-toed shoes or shorts.</li>
+                            <li>Lab coats and safety glasses mandatory.</li>
+                            <li>Strict handwashing protocols.</li>
+                            <li>Controlled access and clear signage.</li>
+                        </ul>
+                    </div>
+                    <div class="image-content">
+                        <img src="../assets/img/safety-lab-glove.jpg" alt="Person wearing lab gloves, demonstrating safety.">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="risk-assessment" class="section-padding">
+            <div class="container">
+                <h2>Risk Assessment: Agents & Protocols</h2>
+                <p>A thorough risk assessment was conducted for all biological agents and experimental procedures involved in the TimeEraser project. Our focus is on minimal risk and maximum containment.</p>
+
+                <h3>Biological Agents Risk Table</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Agent</th>
+                            <th>Strain/Plasmid</th>
+                            <th>Biosafety Level</th>
+                            <th>Potential Hazard</th>
+                            <th>Mitigation Strategy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bacteria</td>
+                            <td><em>E. coli</em> DH5α</td>
+                            <td>BSL-1</td>
+                            <td>Non-pathogenic, common lab strain</td>
+                            <td>Standard BSL-1 practices, autoclave waste</td>
+                        </tr>
+                        <tr>
+                            <td>Bacteria</td>
+                            <td><em>E. coli</em> BL21(DE3)</td>
+                            <td>BSL-1</td>
+                            <td>Non-pathogenic, protein expression host</td>
+                            <td>Standard BSL-1 practices, autoclave waste</td>
+                        </tr>
+                        <tr>
+                            <td>Plasmids</td>
+                            <td>pUC19 (backbone), TimeEraser constructs</td>
+                            <td>BSL-1</td>
+                            <td>No hazardous gene products</td>
+                            <td>Standard molecular cloning safety, inactivation of DNA</td>
+                        </tr>
+                        <tr>
+                            <td>Proteins</td>
+                            <td>Engineered enzymes (e.g., nucleases, ligases)</td>
+                            <td>BSL-1</td>
+                            <td>Non-toxic, non-allergenic (expected)</td>
+                            <td>Standard protein handling, proper disposal</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Experimental Protocol Risk Table</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Protocol</th>
+                            <th>Primary Risks</th>
+                            <th>Safety Procedures</th>
+                            <th>Emergency Protocol</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>DNA Transformation</td>
+                            <td>Contamination, pipetting errors</td>
+                            <td>Sterile technique, use of filter tips</td>
+                            <td>Disinfect spills, wash hands thoroughly</td>
+                        </tr>
+                        <tr>
+                            <td>Gel Electrophoresis</td>
+                            <td>Electrical shock, UV exposure, ethidium bromide (if used)</td>
+                            <td>Gloves, eye protection, UV shield, use of SYBR Safe</td>
+                            <td>First aid for shock/burns, chemical spill kit</td>
+                        </tr>
+                        <tr>
+                            <td>Culturing Microorganisms</td>
+                            <td>Aerosol formation, contamination</td>
+                            <td>Work in biological safety cabinet (BSC), cap tubes tightly</td>
+                            <td>Disinfect spills with 10% bleach, report incident</td>
+                        </tr>
+                        <tr>
+                            <td>Waste Disposal</td>
+                            <td>Biohazard exposure</td>
+                            <td>Autoclave all biological waste, segregate sharp waste</td>
+                            <td>Needle stick protocol, exposure reporting</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="emergency-procedures" class="section-padding">
+            <div class="container">
+                <h2>Emergency Procedures & Preparedness</h2>
+                <p>Our team is trained to respond effectively to various lab emergencies. Below are key procedures to ensure rapid and safe action.</p>
+
+                <div class="diagram-container">
+                    <h3>Emergency Contact Flowchart</h3>
+                    <img src="../assets/img/emergency-flowchart.svg" alt="Flowchart detailing emergency contacts and actions for lab incidents." />
+                    </div>
+
+                <div class="content-block text-image-layout">
+                    <div class="text-content">
+                        <h3>Spill Response Protocol</h3>
+                        <p>For chemical or biological spills, immediate action is crucial. Ensure appropriate personal protective equipment (PPE) is worn, contain the spill, and use designated spill kits. Report all incidents to the lab supervisor immediately.</p>
+                    </div>
+                    <div class="image-content">
+                        <img src="../assets/img/safety-spill-kit.jpg" alt="Lab spill kit ready for use.">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <h2>Responsible Conduct & Dual Use Concerns</h2>
+                <p>We are acutely aware of the potential dual-use implications of synthetic biology research. Our project, TimeEraser, is developed with the sole intention of advancing scientific understanding and benefiting humanity. We regularly review our work to prevent misuse and maintain transparency.</p>
+                <p>All team members are educated on the ethical responsibilities associated with their research and the importance of open communication regarding potential risks or concerns.</p>
+            </div>
+        </section>
+
+        <section class="section-padding faq-section">
+            <div class="container">
+                <h2>Safety FAQ</h2>
+                <div class="collapsible-container">
+                    <details>
+                        <summary>Is <em>E. coli</em> DH5α safe to work with?</summary>
+                        <div class="faq-content">
+                            <p>Yes, <em>E. coli</em> DH5α is a widely used and well-characterized laboratory strain that is considered non-pathogenic to healthy humans. It's a Biosafety Level 1 (BSL-1) organism, meaning it poses minimal risk.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>What should I do if a biological spill occurs?</summary>
+                        <div class="faq-content">
+                            <p>Immediately alert others in the vicinity. Cover the spill with absorbent material (e.g., paper towels), then apply disinfectant (e.g., 10% bleach solution) for at least 20 minutes. Dispose of all materials in biohazard waste. Inform your supervisor.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>How is our biological waste disposed of?</summary>
+                        <div class="faq-content">
+                            <p>All biological waste, including culture media, contaminated plastics, and bacterial cultures, is collected in designated biohazard bags and autoclaved at appropriate temperatures and pressures to ensure complete sterilization before disposal.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Are our engineered constructs safe for the environment?</summary>
+                        <div class="faq-content">
+                            <p>Our TimeEraser constructs are designed for contained laboratory use and are not intended for environmental release. We use non-integrating plasmids and host strains with attenuated survival outside the lab, minimizing any potential environmental impact.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <h2>Regulatory Compliance & External Resources</h2>
+                <p>Our safety plan and practices are in strict adherence with iGEM's safety guidelines and our institution's biosafety committee regulations. We continuously consult relevant resources to stay updated on best practices in biosafety.</p>
+                <ul>
+                    <li><a href="https://2025.igem.org/Safety" target="_blank" rel="noopener noreferrer">iGEM Safety Handbook</a></li>
+                    <li><a href="https://www.who.int/publications/i/item/laboratory-biosafety-manual-4th-edition" target="_blank" rel="noopener noreferrer">WHO Laboratory Biosafety Manual</a></li>
+                    <li><a href="https://www.cdc.gov/labs/biosafety/index.html" target="_blank" rel="noopener noreferrer">CDC Biosafety in Microbiological and Biomedical Laboratories (BMBL)</a></li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="logo-container">
+            <img src="../assets/img/logo.svg" alt="CAFA-AFAC TimeEraser iGEM Logo">
+        </div>
+        <p>&copy; 2025 CAFA-AFAC iGEM Team. All rights reserved. Project TimeEraser.</p>
+        <p>Proudly participating in the International Genetically Engineered Machine Competition.</p>
+        <div class="social-links">
+            <a href="https://twitter.com/your_igem_twitter" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com/your_igem_instagram" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/company/your_igem_linkedin" target="_blank" rel="noopener noreferrer" aria-label="Connect with us on LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

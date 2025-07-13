@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAFA-AFAC iGEM | TimeEraser - Homepage</title>
+    <meta name="description" content="Official homepage of the CAFA-AFAC iGEM team, showcasing our TimeEraser project, a groundbreaking synthetic biology solution.">
+    <meta name="keywords" content="iGEM, synthetic biology, CAFA-AFAC, TimeEraser, Time eraser, DNA, genetic engineering, biotechnology">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/interactive.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.165.0/three.module.min.js"></script>
+    <script type="module" src="https://unpkg.com/three@0.165.0/examples/jsm/controls/OrbitControls.js"></script>
+    <script type="module" src="https://unpkg.com/three@0.165.0/examples/jsm/loaders/GLTFLoader.js"></script>
+
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <a href="index.html" aria-label="CAFA-AFAC iGEM TimeEraser Home">
+                <img src="assets/img/logo.svg" alt="CAFA-AFAC TimeEraser iGEM Logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-item">Home</a></li>
+                <li class="has-submenu">
+                    <a href="project.html" class="nav-item">Project <i class="fas fa-chevron-down submenu-arrow"></i></a>
+                    <ul class="submenu">
+                        <li><a href="project/design.html">Design</a></li>
+                        <li><a href="project/results.html">Results</a></li>
+                        <li><a href="project/implementation.html">Implementation</a></li>
+                        </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="lab.html" class="nav-item">Lab <i class="fas fa-chevron-down submenu-arrow"></i></a>
+                    <ul class="submenu">
+                        <li><a href="lab/experiments.html">Experiments</a></li>
+                        <li><a href="lab/protocols.html">Protocols</a></li>
+                        </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="model.html" class="nav-item">Model <i class="fas fa-chevron-down submenu-arrow"></i></a>
+                    <ul class="submenu">
+                        <li><a href="model/simulation.html">Simulation</a></li>
+                        <li><a href="model/data-analysis.html">Data Analysis</a></li>
+                        </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="hp.html" class="nav-item">Human Practices <i class="fas fa-chevron-down submenu-arrow"></i></a>
+                    <ul class="submenu">
+                        <li><a href="hp/engagement.html">Engagement</a></li>
+                        <li><a href="hp/education.html">Education</a></li>
+                        </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="team.html" class="nav-item">Team <i class="fas fa-chevron-down submenu-arrow"></i></a>
+                    <ul class="submenu">
+                        <li><a href="team/members.html">Members</a></li>
+                        <li><a href="team/attributions.html">Attributions</a></li>
+                        </ul>
+                </li>
+                <li><a href="safety.html" class="nav-item">Safety</a></li>
+                <li><a href="attributions.html" class="nav-item">Attributions</a></li>
+            </ul>
+        </nav>
+    </header>
+
+   <main>
+  <!-- 黑色介绍区块保留 -->
+  <section class="hero-section">
+    <div class="container">
+      <h1>Recombinant Collagen Peptide Lab</h1>
+      <p>Explore the design and testing behind our multifunctional collagen peptide, including its synthesis, delivery, and cost-effective production methods.</p>
+      <a href="#lab-overview" class="btn">Explore Lab Structure</a>
+    </div>
+  </section>
+
+  <!-- 实验介绍结构开始 -->
+  <section class="section-padding" id="lab-overview">
+    <div class="container" style="display: flex; gap: 40px; align-items: flex-start;">
+      <!-- 左侧导航菜单 -->
+      <div style="width: 220px; min-width: 180px; position: sticky; top: 100px;">
+        <nav style="display: flex; flex-direction: column; gap: 12px;">
+          <a href="#lab-overview" class="side-nav-link">🧭 Overview</a>
+          <a href="#lab-design" class="side-nav-link">🧬 Collagen Peptide Design</a>
+          <a href="#lab-expression" class="side-nav-link">🔬 Expression Strategy</a>
+          <a href="#lab-delivery" class="side-nav-link">📦 Transdermal Delivery</a>
+          <a href="#lab-cost" class="side-nav-link">💰 Cost Optimization</a>
+        </nav>
+      </div>
+
+      <!-- 右侧内容展示区 -->
+      <div style="flex: 1; max-width: 880px;">
+        <section id="lab-overview" style="margin-bottom: 40px; scroll-margin-top: 100px;">
+          <h2>Overview</h2>
+          <p>We are developing a recombinant collagen peptide with whitening, anti-aging, and transdermal absorption capabilities, addressing current issues such as high cost, poor absorption, and unclear efficacy in existing collagen products.</p>
+        </section>
+
+        <section id="lab-design" style="margin-bottom: 40px; scroll-margin-top: 100px;">
+          <h2>Collagen Peptide Design</h2>
+          <p>The target sequence includes three core functional domains: a melanin-inhibiting peptide mimicking α-MSH, a growth factor-like fragment that promotes collagen synthesis, and a CPP cell-penetrating peptide to enhance skin permeability — achieving multi-functionality in one.</p>
+        </section>
+
+        <section id="lab-expression" style="margin-bottom: 40px; scroll-margin-top: 100px;">
+          <h2>Expression Strategy</h2>
+          <p>We utilize an E. coli N1917 expression system to perform multifunctional fusion expression using a single plasmid, enabling efficient protein expression and simplified culture processes to improve feasibility and control costs.</p>
+        </section>
+
+        <section id="lab-delivery" style="margin-bottom: 40px; scroll-margin-top: 100px;">
+          <h2>Transdermal Delivery</h2>
+          <p>Microneedle carriers are used as the delivery platform to help peptides penetrate the stratum corneum, achieving effective transdermal absorption and solving the common issue of poor absorption in topical skincare products.</p>
+        </section>
+
+        <section id="lab-cost" style="margin-bottom: 40px; scroll-margin-top: 100px;">
+          <h2>Cost Optimization</h2>
+          <p>Fusion expression avoids segmented cultivation and purification. A unified expression system enhances yield and significantly reduces production costs, boosting the market potential of collagen peptides.</p>
+        </section>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer style="background:#222;color:#fff;padding:40px 20px;text-align:center;margin-top:60px">
+  <div style="max-width:1000px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:center;gap:40px;">
+    <div><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/IGEM_official_logo.svg/200px-IGEM_official_logo.svg.png" alt="igem logo" style="height:40px;"><p>iGEM Official</p></div>
+    <div><p><strong>Explore</strong></p><p>About | Teams | Tracks | Safety</p></div>
+    <div><p><strong>Contact</strong></p><p>igem@igem.org</p></div>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('[id^="lab-"]');
+    const links = document.querySelectorAll('.side-nav-link');
+    let scrollY = window.scrollY;
+    sections.forEach(section => {
+      const top = section.offsetTop - 140;
+      const bottom = top + section.offsetHeight;
+      const link = document.querySelector(`a[href="#${section.id}"]`);
+      if (scrollY >= top && scrollY < bottom) {
+        links.forEach(l => l.classList.remove('active'));
+        if (link) link.classList.add('active');
+      }
+    });
+  });
+</script>
+
+<style>
+  .side-nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    background: #f0f8ff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.2s ease;
+  }
+  .side-nav-link:hover {
+    background-color: #d3ecfb;
+    color: #000;
+  }
+  .side-nav-link.active {
+    background-color: #cde7f8 !important;
+    color: #000 !important;
+    font-weight: bold;
+    border-left: 4px solid #00aaff;
+  }
+</style>
+
+
+
+    <footer class="footer">
+        <div class="logo-container">
+            <img src="../assets/img/logo.svg" alt="CAFA-AFAC TimeEraser iGEM Logo">
+        </div>
+        <p>&copy; 2025 CAFA-AFAC iGEM Team. All rights reserved. Project TimeEraser.</p>
+        <p>Proudly participating in the International Genetically Engineered Machine Competition.</p>
+        <div class="social-links">
+            <a href="https://twitter.com/your_igem_twitter" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com/your_igem_instagram" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/company/your_igem_linkedin" target="_blank" rel="noopener noreferrer" aria-label="Connect with us on LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,526 @@
+/*
+ * CAFA-AFAC TimeEraser iGEM Wiki - Core Styles
+ * Theme: Minimalist, Sophisticated, Youthful Commercial IP
+ * Colors: Black (#1A1A1A), White (#FFFFFF), Muted Yellow (#FDD835)
+ */
+
+/* --- Base Typography & Global Reset --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap'); /* Fallback/Base Font */
+/* For 'Clash Display' or 'Satoshi', you would self-host and use @font-face: */
+/*
+@font-face {
+    font-family: 'Clash Display';
+    src: url('../assets/fonts/clash-display-bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Satoshi';
+    src: url('../assets/fonts/satoshi-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+*/
+
+:root {
+    --color-black: #1A1A1A;
+    --color-white: #FFFFFF;
+    --color-yellow: #FDD835; /* Muted Yellow for accent */
+    --color-gray-light: #F8F8F8;
+    --color-gray-medium: #E0E0E0;
+    --color-text-dark: #333333;
+    --font-heading: 'Inter', sans-serif; /* Replace with 'Clash Display', sans-serif; */
+    --font-body: 'Inter', sans-serif; /* Replace with 'Satoshi', sans-serif; */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+body {
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--color-text-dark);
+    background-color: var(--color-white);
+    overflow-x: hidden; /* Prevents horizontal scroll from dynamic content */
+}
+
+/* --- Headings --- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--color-black);
+    letter-spacing: -0.03em; /* Tighter for sleekness */
+}
+
+h1 { font-size: 3.8em; line-height: 1.1; margin-bottom: 25px; }
+h2 { font-size: 2.8em; line-height: 1.2; margin-bottom: 40px; text-align: center;}
+h3 { font-size: 1.8em; line-height: 1.3; margin-bottom: 15px; }
+h4 { font-size: 1.4em; line-height: 1.4; margin-bottom: 10px; }
+
+p {
+    font-size: 1.1em;
+    margin-bottom: 1em;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+    padding: 15px 35px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(253, 216, 53, 0.2);
+}
+
+.btn:hover {
+    background-color: #FBC02D; /* Slightly darker yellow */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(253, 216, 53, 0.35);
+}
+
+/* --- Sections --- */
+.section-padding {
+    padding: 80px 5%; /* Generous padding for content sections */
+    background-color: var(--color-white);
+    border-top: 1px solid var(--color-gray-medium); /* Subtle separator */
+}
+
+.section-padding:first-of-type {
+    border-top: none; /* No top border for the first section after hero/3D */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Header --- */
+.header {
+    background-color: var(--color-white);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--color-gray-medium);
+}
+
+.header .logo-container {
+    height: 60px; /* Logo height */
+    display: flex;
+    align-items: center;
+}
+
+.header .logo-container img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+/* --- Navigation --- */
+.header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.header nav ul li {
+    margin-left: 35px;
+    position: relative; /* For submenu positioning */
+}
+
+.header nav ul li a {
+    text-decoration: none;
+    color: var(--color-black);
+    font-weight: 600;
+    font-size: 1.05em;
+    transition: color 0.3s ease;
+    padding: 10px 0;
+    display: block;
+}
+
+.header nav ul li a:hover {
+    color: var(--color-yellow);
+}
+
+/* Submenu Styling */
+.submenu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Position below the main nav item */
+    left: 0;
+    background-color: var(--color-black); /* Dark background for submenu */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    min-width: 200px;
+    padding: 10px 0;
+    border-radius: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    z-index: 999; /* Ensure submenu is above content */
+}
+
+.submenu li {
+    margin: 0; /* Reset margin for submenu items */
+}
+
+.submenu li a {
+    color: var(--color-white); /* White text for submenu links */
+    padding: 12px 20px;
+    font-size: 0.95em;
+    font-weight: 400;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.submenu li a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle hover background */
+    color: var(--color-yellow);
+}
+
+/* --- Hero Section (Homepage & Subpages) --- */
+.hero-section {
+    background-color: var(--color-black); /* Dark background for a striking hero */
+    color: var(--color-white);
+    text-align: center;
+    padding: 150px 5% 100px; /* More vertical padding */
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section h1 {
+    font-size: 4.5em;
+    color: var(--color-white);
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.4em;
+    max-width: 900px;
+    margin: 0 auto 50px auto;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* --- General Content Sections --- */
+.content-block {
+    margin-bottom: 60px; /* Spacing between content blocks within a section */
+}
+
+.content-block h3 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Text + Images Section */
+.text-image-layout {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.text-image-layout.reverse {
+    flex-direction: row-reverse; /* For alternating layout */
+}
+
+.text-image-layout .text-content,
+.text-image-layout .image-content {
+    flex: 1; /* Distribute space evenly */
+    min-width: 300px; /* Minimum width before wrapping */
+}
+
+.text-image-layout .image-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.text-image-layout .image-content img:hover {
+    transform: scale(1.02);
+}
+
+/* Grid Gallery Section */
+.grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.grid-gallery-item {
+    background-color: var(--color-gray-light);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.grid-gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+
+.grid-gallery-item img {
+    width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* Crop to fit */
+    display: block;
+}
+
+.grid-gallery-item .item-info {
+    padding: 20px;
+}
+
+.grid-gallery-item h4 {
+    margin-bottom: 8px;
+    color: var(--color-black);
+}
+
+.grid-gallery-item p {
+    font-size: 0.95em;
+    color: var(--color-text-dark);
+}
+
+/* Collapsible Sections (FAQ/Details) */
+.collapsible-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.collapsible-btn {
+    background-color: var(--color-gray-light);
+    color: var(--color-black);
+    cursor: pointer;
+    padding: 20px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    position: relative;
+    padding-right: 60px; /* Space for icon */
+}
+
+.collapsible-btn::after {
+    content: '+';
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+    transition: transform 0.3s ease;
+}
+
+.collapsible-btn.active {
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.collapsible-btn.active::after {
+    content: '-';
+    transform: translateY(-50%) rotate(0deg); /* No rotation for minus */
+}
+
+.collapsible-content {
+    padding: 0 25px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray-medium);
+    border-top: none;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.collapsible-content p {
+    padding: 15px 0;
+}
+
+/* --- Sponsors Section (Example) --- */
+.sponsors-section {
+    text-align: center;
+    padding: 60px 5%;
+    background-color: var(--color-gray-light);
+    border-top: 1px solid var(--color-gray-medium);
+}
+
+.sponsors-section h2 {
+    margin-bottom: 50px;
+}
+
+.sponsor-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.sponsor-logos img {
+    max-height: 80px; /* Adjust as needed */
+    width: auto;
+    filter: grayscale(100%); /* Desaturate for minimalist look */
+    opacity: 0.7;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.sponsor-logos img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 50px 5%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 3px solid var(--color-yellow); /* Yellow accent line */
+}
+
+.footer .logo-container {
+    height: 80px;
+    margin-bottom: 25px;
+}
+
+.footer .logo-container img {
+    height: 100%;
+    width: auto;
+    filter: invert(1) brightness(1.5); /* Make logo white/bright on dark background */
+}
+
+.footer p {
+    margin: 10px 0;
+    font-size: 0.95em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer .social-links {
+    margin-top: 20px;
+}
+
+.footer .social-links a {
+    color: var(--color-yellow);
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1.8em;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer .social-links a:hover {
+    color: var(--color-white);
+    transform: translateY(-3px);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    h1 { font-size: 3em; }
+    h2 { font-size: 2.2em; }
+    h3 { font-size: 1.6em; }
+    p { font-size: 1em; }
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 3%;
+    }
+
+    .header nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .header nav ul li {
+        margin: 5px 15px;
+    }
+
+    .submenu {
+        position: static; /* Stack vertically on mobile */
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        background-color: rgba(0, 0, 0, 0.05); /* Lighter background for nested menu */
+        border-radius: 0;
+        min-width: unset;
+        padding: 0;
+    }
+
+    .submenu li a {
+        padding: 10px 30px;
+        color: var(--color-black);
+    }
+    .submenu li a:hover {
+        background-color: var(--color-gray-medium);
+        color: var(--color-black);
+    }
+
+    .hero-section {
+        padding: 100px 3% 60px;
+    }
+
+    .hero-section h1 {
+        font-size: 3.2em;
+    }
+
+    .hero-section p {
+        font-size: 1.1em;
+    }
+
+    .section-padding {
+        padding: 60px 3%;
+    }
+
+    .text-image-layout {
+        flex-direction: column; /* Stack on mobile */
+        gap: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 { font-size: 2.5em; }
+    h2 { font-size: 1.8em; }
+    .header .logo-container { height: 50px; }
+    .header nav ul li { margin: 5px 8px; }
+    .header nav ul li a { font-size: 0.95em; }
+    .btn { padding: 12px 25px; font-size: 1em; }
+    .grid-gallery { grid-template-columns: 1fr; }
+    .sponsor-logos { gap: 20px; }
+    .sponsor-logos img { max-height: 60px; }
+}

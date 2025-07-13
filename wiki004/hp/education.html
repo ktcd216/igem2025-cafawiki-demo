@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAFA-AFAC iGEM | Education</title>
+    <meta name="description" content="Education and outreach initiatives for the CAFA-AFAC iGEM TimeEraser project">
+    
+    <link rel="stylesheet" href="../css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        .education-section {
+            padding: 60px 0;
+        }
+        .education-goals {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+        .activity-card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .activity-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .activity-icon {
+            width: 50px;
+            height: 50px;
+            background: #4a89dc;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: white;
+            font-size: 20px;
+        }
+        .activity-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #333;
+        }
+        .activity-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .activity-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        .activity-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        .activity-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .impact-metrics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .metric-card {
+            background: #4a89dc;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            min-width: 200px;
+            flex: 1;
+        }
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        .metric-label {
+            font-size: 0.9rem;
+        }
+        .quote-box {
+            background: #f8f9fa;
+            border-left: 4px solid #4a89dc;
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+        .quote-author {
+            text-align: right;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        .gallery-caption {
+            padding: 15px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <!-- Same header as previous code -->
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" style="background-image: url('../assets/img/education-bg.jpg');">
+            <div class="container">
+                <h1>Education & Outreach</h1>
+                <p>Spreading synthetic biology knowledge and inspiring future scientists</p>
+            </div>
+        </section>
+
+        <!-- Education Content -->
+        <section class="education-section">
+            <div class="container">
+                <!-- Education Goals -->
+                <div class="education-goals">
+                    <h2 class="section-title">Our Education Mission</h2>
+                    <p>Through our education initiatives, we aim to:</p>
+                    <ul>
+                        <li>Demystify synthetic biology and aging research for diverse audiences</li>
+                        <li>Inspire STEM interest among K-12 students through hands-on activities</li>
+                        <li>Address public questions and concerns about genetic engineering</li>
+                        <li>Create accessible resources that outlast our iGEM project</li>
+                    </ul>
+                    
+                    <div class="impact-metrics">
+                        <div class="metric-card">
+                            <div class="metric-value">1,200+</div>
+                            <div class="metric-label">Students Reached</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">15</div>
+                            <div class="metric-label">Schools Visited</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">8</div>
+                            <div class="metric-label">Languages Supported</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Student Workshops -->
+                <div class="activity-card">
+                    <div class="activity-header">
+                        <div class="activity-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h3 class="activity-title">School Workshops & Science Fairs</h3>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-text">
+                            <p>We designed interactive synthetic biology workshops for students aged 12-18, adapting content for different education levels:</p>
+                            <ul>
+                                <li><strong>DNA Extraction Lab:</strong> Students extracted DNA from strawberries using household materials</li>
+                                <li><strong>Aging Biology Demo:</strong> Interactive station comparing young vs. senescent cells</li>
+                                <li><strong>Career Panels:</strong> Discussions with researchers about paths in biotechnology</li>
+                            </ul>
+                            
+                            <div class="quote-box">
+                                <p>"The DNA extraction lab made complex science feel accessible. My students haven't stopped talking about it!"</p>
+                                <div class="quote-author">— Li Wei, Biology Teacher at Beijing No.4 High School</div>
+                            </div>
+                        </div>
+                        <div class="activity-image">
+                            <img src="../assets/img/edu/workshop1.jpg" alt="Students conducting DNA extraction experiment">
+                        </div>
+                    </div>
+                    
+                    <div class="gallery">
+                        <div class="gallery-item">
+                            <img src="../assets/img/edu/workshop2.jpg" alt="Team member explaining lab equipment">
+                            <div class="gallery-caption">Demonstrating micropipetting techniques</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="../assets/img/edu/workshop3.jpg" alt="Students examining samples">
+                            <div class="gallery-caption">Hands-on microscope activity</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="../assets/img/edu/workshop4.jpg" alt="Student presentation">
+                            <div class="gallery-caption">Student presenting their findings</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Digital Resources -->
+                <div class="activity-card">
+                    <div class="activity-header">
+                        <div class="activity-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <h3 class="activity-title">Digital Education Resources</h3>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-image">
+                            <img src="../assets/img/edu/digital1.jpg" alt="Screenshot of educational video">
+                        </div>
+                        <div class="activity-text">
+                            <p>We created multilingual digital content to reach global audiences:</p>
+                            <ul>
+                                <li><strong>Animated Explainer Series:</strong> 5 short videos covering synthetic biology basics (50,000+ views)</li>
+                                <li><strong>Virtual Lab Tour:</strong> 360° interactive lab experience with quiz questions</li>
+                                <li><strong>Teacher Toolkit:</strong> Downloadable lesson plans aligned with national curriculum standards</li>
+                            </ul>
+                            
+                            <div class="impact-metrics">
+                                <div class="metric-card">
+                                    <div class="metric-value">50K+</div>
+                                    <div class="metric-label">Video Views</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">1.2K</div>
+                                    <div class="metric-label">Toolkit Downloads</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Community Engagement -->
+                <div class="activity-card">
+                    <div class="activity-header">
+                        <div class="activity-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h3 class="activity-title">Community & Specialized Outreach</h3>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-text">
+                            <p>We tailored programs for specific community groups:</p>
+                            <ul>
+                                <li><strong>Senior Citizen Seminars:</strong> Discussed the science of aging and healthy lifestyle factors</li>
+                                <li><strong>Rural School Program:</strong> Mobile lab kits for schools without science facilities</li>
+                                <li><strong>Museum Collaboration:</strong> Interactive exhibit at Beijing Science Center during Biology Week</li>
+                            </ul>
+                            
+                            <div class="quote-box">
+                                <p>"The mobile lab program brought cutting-edge science to our remote school for the first time. Students are now considering STEM careers they never knew existed."</p>
+                                <div class="quote-author">— Wang Jing, Principal in rural Hebei province</div>
+                            </div>
+                        </div>
+                        <div class="activity-image">
+                            <img src="../assets/img/edu/community1.jpg" alt="Team at community science fair">
+                        </div>
+                    </div>
+                    
+                    <div class="gallery">
+                        <div class="gallery-item">
+                            <img src="../assets/img/edu/community2.jpg" alt="Elderly participants at seminar">
+                            <div class="gallery-caption">Aging science seminar for seniors</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="../assets/img/edu/community3.jpg" alt="Mobile lab setup">
+                            <div class="gallery-caption">Mobile lab in rural classroom</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="../assets/img/edu/community4.jpg" alt="Museum exhibit">
+                            <div class="gallery-caption">Interactive museum display</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- International Collaboration -->
+                <div class="activity-card">
+                    <div class="activity-header">
+                        <div class="activity-icon">
+                            <i class="fas fa-globe-asia"></i>
+                        </div>
+                        <h3 class="activity-title">Global Education Initiatives</h3>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-image">
+                            <img src="../assets/img/edu/global1.jpg" alt="International student group">
+                        </div>
+                        <div class="activity-text">
+                            <p>We extended our impact through international partnerships:</p>
+                            <ul>
+                                <li><strong>Multilingual Resources:</strong> Translated materials into 8 languages including Uyghur and Tibetan</li>
+                                <li><strong>iGEM Collaboration:</strong> Joint webinar series with teams from India, Germany, and Brazil</li>
+                                <li><strong>UN SDG Alignment:</strong> Connected our work to Quality Education and Good Health global goals</li>
+                            </ul>
+                            
+                            <div class="impact-metrics">
+                                <div class="metric-card">
+                                    <div class="metric-value">8</div>
+                                    <div class="metric-label">Languages</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">6</div>
+                                    <div class="metric-label">Countries Reached</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reflection -->
+                <div class="activity-card" style="background: #f8f9fa;">
+                    <h3 class="activity-title" style="text-align: center;">Impact & Future Directions</h3>
+                    <div class="activity-content">
+                        <div class="activity-text">
+                            <p>Our education efforts directly influenced both our community and our project:</p>
+                            <ul>
+                                <li>Student questions led us to simplify our public explanations of cellular aging</li>
+                                <li>Teacher feedback helped us identify common misconceptions about genetic engineering</li>
+                                <li>Community concerns prompted us to enhance our safety documentation</li>
+                            </ul>
+                            <p>We're committed to sustaining these initiatives through:</p>
+                            <ul>
+                                <li>Ongoing partnership with local science centers</li>
+                                <li>Annual synthetic biology summer camp for high school students</li>
+                                <li>Open-access repository of all educational materials</li>
+                            </ul>
+                        </div>
+                        <div class="activity-image">
+                            <img src="../assets/img/edu/future1.jpg" alt="Students with team members">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <!-- Same footer as previous code -->
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
+

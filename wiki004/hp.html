@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAFA-AFAC iGEM | Human Practices</title>
+    <meta name="description" content="Human Practices for the CAFA-AFAC iGEM TimeEraser project">
+    
+    <link rel="stylesheet" href="../css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        .hp-section {
+            padding: 60px 0;
+        }
+        .hp-category {
+            margin-bottom: 60px;
+        }
+        .hp-card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .hp-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .hp-icon {
+            width: 60px;
+            height: 60px;
+            background: #4a89dc;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: white;
+            font-size: 24px;
+        }
+        .hp-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+        .hp-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .hp-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        .hp-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        .hp-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .section-title:after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: #4a89dc;
+            margin: 15px auto 0;
+        }
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #4a89dc;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 3px;
+        }
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12px;
+            background-color: white;
+            border: 4px solid #4a89dc;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .left {
+            left: 0;
+            text-align: right;
+        }
+        .right {
+            left: 50%;
+            text-align: left;
+        }
+        .right::after {
+            left: -12px;
+        }
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .quote-box {
+            background: #f8f9fa;
+            border-left: 4px solid #4a89dc;
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+        .quote-author {
+            text-align: right;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏代码开始 -->
+    <header class="header">
+        <div class="logo-container">
+            <a href="../index.html" aria-label="CAFA-AFAC iGEM TimeEraser Home">
+                <img src="../assets/img/logo.svg" alt="CAFA-AFAC TimeEraser iGEM Logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html" class="nav-item">Home</a></li>
+                <li class="has-submenu">
+                    <a href="../project.html" class="nav-item">Project <i class="fas fa-chevron-down submenu-arrow"></i></a>
+                    <ul class="submenu">
+                        <li><a href="../project/design.html">Design</a></li>
+                        <li><a href="../project/results.html">Results</a></li>
+                        <li><a href="../project/implementation.html">Implementation</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="../lab.html" class="nav-item">Lab <i class="fas fa-chevron-down submenu-arrow"></i></a>
+                    <ul class="submenu">
+                        <li><a href="../lab/experiments.html">Experiments</a></li>
+                        <li><a href="../lab/protocols.html">Protocols</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="../model.html" class="nav-item">Model <i class="fas fa-chevron-down submenu-arrow"></i></a>
+                    <ul class="submenu">
+                        <li><a href="../model/simulation.html">Simulation</a></li>
+                        <li><a href="../model/data-analysis.html">Data Analysis</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu active">
+                    <a href="../hp.html" class="nav-item">Human Practices <i class="fas fa-chevron-down submenu-arrow"></i></a>
+                    <ul class="submenu">
+                        <li><a href="../hp/engagement.html">Engagement</a></li>
+                        <li><a href="../hp/education.html">Education</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="../team.html" class="nav-item">Team <i class="fas fa-chevron-down submenu-arrow"></i></a>
+                    <ul class="submenu">
+                        <li><a href="../team/members.html">Members</a></li>
+                        <li><a href="../team/attributions.html">Attributions</a></li>
+                    </ul>
+                </li>
+                <li><a href="../safety.html" class="nav-item">Safety</a></li>
+                <li><a href="../attributions.html" class="nav-item">Attributions</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- 导航栏代码结束 -->
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" style="background-image: url('../assets/img/hp-bg.jpg');">
+            <div class="container">
+                <h1>Human Practices</h1>
+                <p>Bridging synthetic biology with societal needs and ethical considerations</p>
+            </div>
+        </section>
+
+        <!-- HP Content -->
+        <section class="hp-section">
+            <div class="container">
+                <div class="intro-text">
+                    <p>Our Human Practices work ensures that TimeEraser addresses real-world needs responsibly. Through stakeholder engagement, ethical analysis, and continuous iteration, we've shaped a project that is both scientifically innovative and socially conscious.</p>
+                </div>
+
+                <!-- Social Needs -->
+                <div class="hp-category">
+                    <h2 class="section-title">Social Needs & Public Engagement</h2>
+                    
+                    <div class="hp-card">
+                        <div class="hp-header">
+                            <div class="hp-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3 class="hp-title">Identifying Societal Needs</h3>
+                        </div>
+                        <div class="hp-content">
+                            <div class="hp-text">
+                                <p>We conducted extensive research to understand the societal implications of aging interventions:</p>
+                                <ul>
+                                    <li>Interviewed 15 geriatric specialists about clinical needs in aging research</li>
+                                    <li>Surveyed 200+ community members on perceptions of lifespan extension</li>
+                                    <li>Analyzed policy documents on aging population challenges in China</li>
+                                </ul>
+                                
+                                <div class="quote-box">
+                                    <p>"The most valuable aging research doesn't just extend life, but extends healthy, productive years. This team's focus on healthspan aligns perfectly with clinical priorities."</p>
+                                    <div class="quote-author">— Dr. Zhang Li, Gerontology Department, Beijing Hospital</div>
+                                </div>
+                            </div>
+                            <div class="hp-image">
+                                <img src="../assets/img/hp/hp-survey.jpg" alt="Team conducting community surveys">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hp-card">
+                        <div class="hp-header">
+                            <div class="hp-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h3 class="hp-title">Stakeholder Engagement</h3>
+                        </div>
+                        <div class="hp-content">
+                            <div class="hp-image">
+                                <img src="../assets/img/hp/hp-interview.jpg" alt="Team interviewing a healthcare professional">
+                            </div>
+                            <div class="hp-text">
+                                <p>Key stakeholder interactions that shaped our project:</p>
+                                <ul>
+                                    <li>Roundtable discussion with bioethicists from the Chinese Academy of Sciences</li>
+                                    <li>Collaboration with longevity startup founders on commercialization pathways</li>
+                                    <li>Consultation with policymakers about regulatory frameworks for aging interventions</li>
+                                </ul>
+                                <p>These conversations led us to focus on <strong>healthspan extension</strong> rather than just lifespan, addressing ethical concerns about overpopulation while meeting medical needs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ethics & Safety -->
+                <div class="hp-category">
+                    <h2 class="section-title">Ethics & Safety</h2>
+                    
+                    <div class="hp-card">
+                        <div class="hp-header">
+                            <div class="hp-icon">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <h3 class="hp-title">Ethical Considerations</h3>
+                        </div>
+                        <div class="hp-content">
+                            <div class="hp-text">
+                                <p>We addressed several ethical dimensions of our research:</p>
+                                <ul>
+                                    <li>Conducted risk-benefit analysis of cellular rejuvenation therapies</li>
+                                    <li>Evaluated equity of access issues with potential future treatments</li>
+                                    <li>Developed guidelines for responsible communication of aging research</li>
+                                </ul>
+                                <p>Our ethical framework was reviewed by the university's Institutional Review Board and incorporated into all public communications.</p>
+                            </div>
+                            <div class="hp-image">
+                                <img src="../assets/img/hp/hp-ethics.jpg" alt="Team discussing ethics with advisors">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hp-card">
+                        <div class="hp-header">
+                            <div class="hp-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3 class="hp-title">Biosafety Implementation</h3>
+                        </div>
+                        <div class="hp-content">
+                            <div class="hp-image">
+                                <img src="../assets/img/hp/hp-safety.jpg" alt="Team member following lab safety protocols">
+                            </div>
+                            <div class="hp-text">
+                                <p>Safety measures integrated throughout our project:</p>
+                                <ul>
+                                    <li>All engineered strains contain dual kill switches for biocontainment</li>
+                                    <li>Regular safety training sessions for all team members</li>
+                                    <li>Consultation with iGEM Safety Committee for risk assessment</li>
+                                </ul>
+                                <p>We implemented additional containment measures after community members expressed concerns about engineered organisms in aging research.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Policy & Education -->
+                <div class="hp-category">
+                    <h2 class="section-title">Policy & Education</h2>
+                    
+                    <div class="hp-card">
+                        <div class="hp-header">
+                            <div class="hp-icon">
+                                <i class="fas fa-gavel"></i>
+                            </div>
+                            <h3 class="hp-title">Policy Research</h3>
+                        </div>
+                        <div class="hp-content">
+                            <div class="hp-text">
+                                <p>Our analysis of current regulations and policy recommendations:</p>
+                                <ul>
+                                    <li>Mapped regulatory pathways for cellular rejuvenation therapies in China, US, and EU</li>
+                                    <li>Identified gaps in oversight for gene therapies targeting aging</li>
+                                    <li>Proposed framework for staged clinical testing of healthspan interventions</li>
+                                </ul>
+                                <p>We presented our findings to the National Health Commission's emerging technologies working group.</p>
+                            </div>
+                            <div class="hp-image">
+                                <img src="../assets/img/hp/hp-policy.jpg" alt="Team reviewing policy documents">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hp-card">
+                        <div class="hp-header">
+                            <div class="hp-icon">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                            </div>
+                            <h3 class="hp-title">Education & Outreach</h3>
+                        </div>
+                        <div class="hp-content">
+                            <div class="hp-image">
+                                <img src="../assets/img/hp/hp-education.jpg" alt="Team teaching synthetic biology to students">
+                            </div>
+                            <div class="hp-text">
+                                <p>Our initiatives to engage diverse audiences:</p>
+                                <ul>
+                                    <li>Developed aging biology curriculum for high school students (reached 500+ students)</li>
+                                    <li>Created bilingual explainer videos about synthetic biology and aging research</li>
+                                    <li>Organized community science fair with hands-on demos</li>
+                                </ul>
+                                <p>All materials were tested with focus groups to ensure accessibility.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Evolution Timeline -->
+                <div class="hp-category">
+                    <h2 class="section-title">Project Evolution Through Human Practices</h2>
+                    <div class="hp-card">
+                        <div class="timeline">
+                            <div class="timeline-item left">
+                                <div class="timeline-content">
+                                    <h4>Initial Concept</h4>
+                                    <p>Focused on lifespan extension through telomerase activation</p>
+                                    <img src="../assets/img/hp/timeline1.jpg" alt="Initial project brainstorming" style="width:100%; margin-top:10px;">
+                                </div>
+                            </div>
+                            <div class="timeline-item right">
+                                <div class="timeline-content">
+                                    <h4>Stakeholder Feedback</h4>
+                                    <p>Pivoted to healthspan after medical professionals emphasized quality of life</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item left">
+                                <div class="timeline-content">
+                                    <h4>Safety Enhancements</h4>
+                                    <p>Added redundant biocontainment after community consultations</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item right">
+                                <div class="timeline-content">
+                                    <h4>Final Design</h4>
+                                    <p>Integrated biomarkers for healthspan assessment based on clinical input</p>
+                                    <img src="../assets/img/hp/timeline4.jpg" alt="Final project design" style="width:100%; margin-top:10px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="logo-container">
+            <img src="../assets/img/logo.svg" alt="CAFA-AFAC TimeEraser iGEM Logo">
+        </div>
+        <p>&copy; 2025 CAFA-AFAC iGEM Team. All rights reserved. Project TimeEraser.</p>
+        <p>Proudly participating in the International Genetically Engineered Machine Competition.</p>
+        <div class="social-links">
+            <a href="https://twitter.com/your_igem_twitter" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com/your_igem_instagram" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/company/your_igem_linkedin" target="_blank" rel="noopener noreferrer" aria-label="Connect with us on LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
+

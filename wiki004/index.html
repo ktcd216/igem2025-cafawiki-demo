@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAFA-AFAC iGEM | TimeEraser - Homepage</title>
+    <meta name="description" content="Official homepage of the CAFA-AFAC iGEM team, showcasing our TimeEraser project, a groundbreaking synthetic biology solution.">
+    <meta name="keywords" content="iGEM, synthetic biology, CAFA-AFAC, TimeEraser, Time eraser, DNA, genetic engineering, biotechnology">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/interactive.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.165.0/three.module.min.js"></script>
+    <script type="module" src="https://unpkg.com/three@0.165.0/examples/jsm/controls/OrbitControls.js"></script>
+    <script type="module" src="https://unpkg.com/three@0.165.0/examples/jsm/loaders/GLTFLoader.js"></script>
+
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <a href="index.html" aria-label="CAFA-AFAC iGEM TimeEraser Home">
+                <img src="assets/img/logo.svg" alt="CAFA-AFAC TimeEraser iGEM Logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-item">Home</a></li>
+                <li class="has-submenu">
+                    <a href="project.html" class="nav-item">Project <i class="fas fa-chevron-down submenu-arrow"></i></a>
+                    <ul class="submenu">
+                        <li><a href="project/design.html">Design</a></li>
+                        <li><a href="project/results.html">Results</a></li>
+                        <li><a href="project/implementation.html">Implementation</a></li>
+                        </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="lab.html" class="nav-item">Lab <i class="fas fa-chevron-down submenu-arrow"></i></a>
+                    <ul class="submenu">
+                        <li><a href="lab/experiments.html">Experiments</a></li>
+                        <li><a href="lab/protocols.html">Protocols</a></li>
+                        </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="model.html" class="nav-item">Model <i class="fas fa-chevron-down submenu-arrow"></i></a>
+                    <ul class="submenu">
+                        <li><a href="model/simulation.html">Simulation</a></li>
+                        <li><a href="model/data-analysis.html">Data Analysis</a></li>
+                        </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="hp.html" class="nav-item">Human Practices <i class="fas fa-chevron-down submenu-arrow"></i></a>
+                    <ul class="submenu">
+                        <li><a href="hp/engagement.html">Engagement</a></li>
+                        <li><a href="hp/education.html">Education</a></li>
+                        </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="team.html" class="nav-item">Team <i class="fas fa-chevron-down submenu-arrow"></i></a>
+                    <ul class="submenu">
+                        <li><a href="team/members.html">Members</a></li>
+                        <li><a href="team/attributions.html">Attributions</a></li>
+                        </ul>
+                </li>
+                <li><a href="safety.html" class="nav-item">Safety</a></li>
+                <li><a href="attributions.html" class="nav-item">Attributions</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <h1>TimeEraser: Rewriting Biological Timelines</h1>
+                <p>CAFA-AFAC presents a novel synthetic biology solution to precisely control cellular aging. Explore how we're engineering the future, today.</p>
+                <a href="#section-introduction" class="btn">Learn More About TimeEraser</a>
+            </div>
+        </section>
+
+        <section id="threejs-container">
+            <canvas id="threejs-canvas"></canvas>
+            <div class="threejs-overlay">
+                <p>Scroll to dive into our project's core. Click and drag to explore the 3D models.</p>
+            </div>
+        </section>
+
+        <section id="section-introduction" class="section-padding">
+            <div class="container">
+                <h2>The Vision Behind TimeEraser</h2>
+                <div class="content-block text-image-layout">
+                    <div class="text-content">
+                        <h3>Addressing the Grand Challenge of Aging</h3>
+                        <p>Our world faces ever-increasing demographic shifts, with an aging population bringing new healthcare and societal demands. TimeEraser directly tackles this by leveraging advanced synthetic biology to explore mechanisms of cellular longevity and rejuvenation.</p>
+                        <p>We're not just observing; we're actively engineering biological systems to push the boundaries of what's possible in life extension and healthy aging.</p>
+                        <a href="project.html" class="btn">See Project Details</a>
+                    </div>
+                    <div class="image-content">
+                        <img src="assets/img/grid-item-1.jpg" alt="Microscopic view of cells related to TimeEraser research">
+                    </div>
+                </div>
+                <div class="content-block text-image-layout reverse">
+                    <div class="text-content">
+                        <h3>Cutting-Edge Design and Methodology</h3>
+                        <p>TimeEraser employs a sophisticated genetic circuit designed to interact with key aging pathways. Our approach integrates CRISPR technology with novel bioremediation strategies, ensuring both precision and safety in our interventions.</p>
+                        <p>Through iterative design cycles and rigorous experimental validation, we've refined our system to achieve unprecedented control over cellular processes, paving the way for future therapeutic applications.</p>
+                        <a href="lab.html" class="btn">Explore Our Lab Work</a>
+                    </div>
+                    <div class="image-content">
+                        <img src="assets/img/grid-item-2.jpg" alt="Lab environment with biotechnology equipment">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <h2>Key Innovations of TimeEraser</h2>
+                <div class="grid-gallery">
+                    <div class="grid-gallery-item">
+                        <img src="assets/img/grid-item-3.jpg" alt="Genetic code illustration">
+                        <div class="item-info">
+                            <h4>Precision Gene Editing</h4>
+                            <p>Utilizing advanced CRISPR techniques for targeted biological interventions.</p>
+                        </div>
+                    </div>
+                    <div class="grid-gallery-item">
+                        <img src="assets/img/grid-item-4.jpg" alt="Protein structure visualization">
+                        <div class="item-info">
+                            <h4>Novel Protein Expression</h4>
+                            <p>Engineered proteins designed to neutralize age-related cellular damage.</p>
+                        </div>
+                    </div>
+                    <div class="grid-gallery-item">
+                        <img src="assets/img/grid-item-5.jpg" alt="Data analytics charts">
+                        <div class="item-info">
+                            <h4>Predictive Modeling</h4>
+                            <p>Sophisticated computational models to simulate and forecast biological outcomes.</p>
+                        </div>
+                    </div>
+                    <div class="grid-gallery-item">
+                        <img src="assets/img/grid-item-6.jpg" alt="Community outreach image">
+                        <div class="item-info">
+                            <h4>Ethical & Societal Impact</h4>
+                            <p>Engaging with stakeholders to ensure responsible innovation and public understanding.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="collapsible-container">
+                    <button class="collapsible-btn">What is TimeEraser's primary goal?</button>
+                    <div class="collapsible-content">
+                        <p>TimeEraser aims to develop a synthetic biological system capable of precisely controlling cellular aging processes, with the ultimate goal of promoting healthy longevity and mitigating age-related diseases. We focus on engineered interventions at the molecular level.</p>
+                    </div>
+                    <button class="collapsible-btn">How does TimeEraser differ from traditional anti-aging research?</button>
+                    <div class="collapsible-content">
+                        <p>Unlike traditional approaches that often focus on pharmaceuticals or lifestyle changes, TimeEraser utilizes synthetic biology to directly reprogram cellular pathways. We engineer novel genetic circuits and biological components to achieve specific, targeted effects on aging mechanisms.</p>
+                    </div>
+                    <button class="collapsible-btn">What are the ethical considerations for a project like TimeEraser?</button>
+                    <div class="collapsible-content">
+                        <p>Ethical considerations are paramount. We engage extensively with ethicists, the public, and scientific communities through our Human Practices initiatives to discuss the societal implications, accessibility, and responsible development of such powerful technology. Transparency and public dialogue are core to our values.</p>
+                    </div>
+                    <button class="collapsible-btn">How can I learn more about the scientific details?</button>
+                    <div class="collapsible-content">
+                        <p>You can delve deeper into our scientific methodology, experimental results, and computational models by visiting our dedicated <a href="project.html">Project</a>, <a href="lab.html">Lab</a>, and <a href="model.html">Model</a> sections. We provide detailed documentation for all our work.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="character-slider-section">
+            <div class="container">
+                <h2>Meet the Innovators of CAFA-AFAC</h2>
+            </div>
+            <div class="character-slider-wrapper">
+                <div class="character-slider">
+                    <div class="character-card">
+                        <img src="assets/img/character-alice.png" alt="Illustration of Alice, Project Lead">
+                        <h3>Alice Chen</h3>
+                        <p>Project Lead | Genetic Engineering</p>
+                        </div>
+                    <div class="character-card">
+                        <img src="assets/img/character-bob.png" alt="Illustration of Bob, Lab Manager">
+                        <h3>Bob Singh</h3>
+                        <p>Lab Manager | Molecular Biology</p>
+                    </div>
+                    <div class="character-card">
+                        <img src="assets/img/character-carol.png" alt="Illustration of Carol, Modeling Specialist">
+                        <h3>Carol Lee</h3>
+                        <p>Modeling Specialist | Bioinformatics</p>
+                    </div>
+                    <div class="character-card">
+                        <img src="assets/img/character-david.png" alt="Illustration of David, Human Practices Lead">
+                        <h3>David Kim</h3>
+                        <p>Human Practices Lead | Outreach</p>
+                    </div>
+                    <div class="character-card">
+                        <img src="assets/img/character-emma.png" alt="Illustration of Emma, Wiki Developer">
+                        <h3>Emma Davis</h3>
+                        <p>Wiki Developer | Graphic Design</p>
+                    </div>
+                    </div>
+            </div>
+        </section>
+
+        <section class="sponsors-section">
+            <div class="container">
+                <h2>Our Valued Partners & Sponsors</h2>
+                <div class="sponsor-logos">
+                    <img src="assets/img/sponsor-logo-1.png" alt="University Logo">
+                    <img src="assets/img/sponsor-logo-2.png" alt="Biotech Company Logo">
+                    <img src="assets/img/sponsor-logo-3.png" alt="Research Institute Logo">
+                    </div>
+                <p style="margin-top: 40px;">Interested in supporting groundbreaking synthetic biology? <a href="mailto:contact@cafaafaceigem.org" class="btn">Partner With Us</a></p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="logo-container">
+            <img src="assets/img/logo.svg" alt="CAFA-AFAC TimeEraser iGEM Logo">
+        </div>
+        <p>&copy; 2025 CAFA-AFAC iGEM Team. All rights reserved. Project TimeEraser.</p>
+        <p>Proudly participating in the International Genetically Engineered Machine Competition.</p>
+        <div class="social-links">
+            <a href="https://twitter.com/your_igem_twitter" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com/your_igem_instagram" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/company/your_igem_linkedin" target="_blank" rel="noopener noreferrer" aria-label="Connect with us on LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script type="module" src="js/custom-threejs-scene.js"></script>
+</body>
+</html>
